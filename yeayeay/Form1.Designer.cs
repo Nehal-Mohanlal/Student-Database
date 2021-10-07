@@ -43,6 +43,8 @@ namespace yeayeay
             this.columnHeadername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderlname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,6 +119,7 @@ namespace yeayeay
             this.btnPopulate.TabIndex = 9;
             this.btnPopulate.Text = "populate list view";
             this.btnPopulate.UseVisualStyleBackColor = true;
+            this.btnPopulate.Click += new System.EventHandler(this.btnPopulate_Click);
             // 
             // listView1
             // 
@@ -125,6 +128,7 @@ namespace yeayeay
             this.columnHeadername,
             this.columnHeaderlname,
             this.columnHeaderCid});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(23, 26);
             this.listView1.Name = "listView1";
@@ -132,6 +136,7 @@ namespace yeayeay
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // columnHeaderSid
             // 
@@ -152,11 +157,20 @@ namespace yeayeay
             // 
             this.columnHeaderCid.Text = "Course ID";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(352, 288);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(417, 150);
+            this.dataGridView1.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnPopulate);
             this.Controls.Add(this.TxtCourse);
@@ -169,6 +183,8 @@ namespace yeayeay
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +206,7 @@ namespace yeayeay
         private System.Windows.Forms.ColumnHeader columnHeadername;
         private System.Windows.Forms.ColumnHeader columnHeaderlname;
         private System.Windows.Forms.ColumnHeader columnHeaderCid;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
